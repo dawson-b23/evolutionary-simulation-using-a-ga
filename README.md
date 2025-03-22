@@ -17,27 +17,35 @@ This project was developed as part of a computational biology assignment by Matt
 ## Installation
 
 1. **Clone the Repository**:
+
    ```bash
    git clone https://github.com/your-username/evolutionary-simulation-using-a-ga.git
    cd evolutionary-simulation-using-a-ga
    ```
-   
+
 2. Set Up a Virtual Environment (optional but recommended):
-  ```bash 
+
+  ```bash
   python -m venv venv
   source venv/bin/activate
   ```
+
 3. Install Dependencies:
+
   ```bash
   pip install -r requirements.txt
   ```
 
-## Usage 
+## Usage
+
 Run the simulation with the default configuration (3 iterations of two experimental conditions: mutation only and mutation + HGT):
+
   ```bash
   python3 main.py
   ```
+
 The script will:
+
 - Execute the evolutionary simulation.
 - Save results as CSV files in `experiment_X` directories and averaged results in the root directory.
 - Generate plots (e.g., fitness over generations, nucleic vs. protein alignment) saved as PNG files.
@@ -45,6 +53,9 @@ The script will:
 To modify parameters (e.g., population size, mutation rate), edit the `EvolutionSimulator` class in `main.py`.
 
 ## Project Structure
+
+```
+
 evolutionary-simulation-using-a-ga/
 │
 ├── main.py                 # Main simulation script
@@ -64,7 +75,7 @@ evolutionary-simulation-using-a-ga/
 ├── avg_deletions_boxplot.png         # Averaged deletions plot
 ├── all_experiments_fitness.png       # Fitness plot for all runs
 └── all_experiments_alignment.png     # Alignment plot for all runs
-
+```
 
 ## Dependencies
 
@@ -78,6 +89,7 @@ The simulation compares two conditions:
 2. **Mutation + HGT**: Adds horizontal gene transfer to spread beneficial mutations.
 
 Key findings (based on 3 runs):
+
 - HGT increases final average fitness (e.g., 5.22–6.10 vs. 4.26–5.22 for mutation only).
 - Nucleic acid similarity stabilizes at 55–66%, while protein alignment scores vary more with HGT (4.96–20.69 vs. -19.58–11.69).
 - HGT maintains higher protein-level similarity, suggesting better preservation of function.
